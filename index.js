@@ -7,7 +7,7 @@ const dotenv =require('dotenv').config();
 
 var m = moment();
 //connect to mongodb database
-mongoose.connect('mongodb+srv://sabrina:12345@cluster0.lpiz4.mongodb.net/myFirstDatabase',
+mongoose.connect(`mongodb+srv://sabrina:${process.env.password}@cluster0.lpiz4.mongodb.net/myFirstDatabase`,
 {
     useNewUrlParser:true,
     useUnifiedTopology:true,
