@@ -1,0 +1,27 @@
+<%- include('./partials/header') %>
+<%- include('./partials/navbar') %>
+
+<div class="container mt-5 py-5">
+<div class="position-relative">
+    <h3 class=" position-absolute start-50 bottom-50">All Blogs</h3>
+</div>
+<% blogs.forEach( blog => { %>
+    <div class="card mt-3">
+        <div class="card-body">
+            <p class="text-muted">Published At: <%= blog.postedAt %></p>
+            <h5 class="card-title"><%= blog.title%></h5>
+            <p class="card-text"><%= blog.content %>...<a href="../routes/blog/<%=blog._id%>">Read More</a></p>
+            <!-- <a href="../routes/blog/<%=blog._id%>" class="btn btn-primary">Read More...</a> -->
+           
+                <a href="../delete/<%=blog._id%>" class="btn btn-danger">Delete</a>
+                <a href="../edit/<%=blog._id%>" class="btn btn-warning ">Edit</a>
+          
+        </div>
+    </div>
+<%})%>
+</div>
+<%- include('./partials/footer') %>
+
+
+
+

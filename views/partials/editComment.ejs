@@ -1,0 +1,29 @@
+<%- include('./header') %>
+<%- include('./navbar') %>
+
+
+<div class="container mt-5 ">
+   <div class="border border-primary rounded p-3">
+    <p class="text-muted">Published At : <%=blog.postedAt%></p>
+    <h2><%=blog.title%></h2>
+    <p class="mt-5"><%=blog.content%></p>
+   </div>
+   
+    <% blog.comments.forEach( comment => { %>
+        <div class="card mt-3">
+            <div class="card-body">
+                <form action="/edit/<%=comment._id%>" method="POST">   
+                        <p class="card-text"><%= comment.content %></p>
+                        <input type="submit" value="Save Changes " class="mt-5 btn btn-md btn-danger">
+                </form>
+            </div>
+        </div>
+        
+    <%})%>
+  
+</div>
+
+
+
+
+<%- include('./footer') %>  
