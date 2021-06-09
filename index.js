@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const ejs = require('ejs');
 var moment = require('moment');
 const app = express();
+const dotenv =require('dotenv').config();
+
 var m = moment();
 //connect to mongodb database
 mongoose.connect('mongodb+srv://sabrina:12345@cluster0.lpiz4.mongodb.net/myFirstDatabase',
@@ -41,7 +43,7 @@ app.use(require('./routes/comment'))
 
 
 //server configurations are here..
-const port = 3000;
+const port = 3000 || process.env.PORT;
 app.listen(port, () => {
     console.log(`Server is listening on: http://localhost:${port}`)
 })
