@@ -14,8 +14,8 @@
             <div class="card-body">
             <p class="text-muted">Commented At: <%= comment.commentedAt %></p>    
             <p class="card-text"><%= comment.content %></p>
-            <a href="../edit/<%=blog.comments._id%>" class="btn btn-warning">Edit</a>
-            <a href="../../routes/" class="btn btn-danger">Delete</a>
+            <a href="../comment/edit/<%=comment._id%>/<%=blog._id%>" class="btn btn-warning">Edit</a>
+            <a href="../comment/delete/<%=comment._id%>/<%=blog._id%>" class="btn btn-danger">Delete</a>
             </div>
         </div>
         
